@@ -1,0 +1,45 @@
+﻿<Window x:Class="team_project.Pages.UserPages.PublisherPages.ModalWindows.AddUpdateModalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:team_project.Pages.UserPages.PublisherPages.ModalWindows"
+        mc:Ignorable="d"
+        Title="Добавление версии продукта" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Name="Grid_NewProductInfo">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Наименование версии продукта"/>
+                <TextBox Name="TextBox_Name"/>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Выбор директории"/>
+                <Button Name="Button_SelectFolder" Content="Выбрать директорию" Padding="4" Margin="4" FontSize="15" Click="Button_SelectFolder_Click"/>
+                <Label Name="Label_FolderPath" Content="Расположение: "></Label>
+                <Label Name="Label_FolderSize" Content="Размер: "/>
+
+            </StackPanel>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Name="Button_Submit" Margin="5" Style="{StaticResource ButtonAccept}" Content="Добавить" Click="Button_Submit_Click"></Button>
+            <Button Name="Button_Cancel" Margin="5" Style="{StaticResource ButtonCancel}" Content="Отмена" Click="Button_Cancel_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

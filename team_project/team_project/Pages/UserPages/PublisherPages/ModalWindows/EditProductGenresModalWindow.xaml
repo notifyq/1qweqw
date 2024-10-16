@@ -1,0 +1,41 @@
+﻿<Window x:Class="team_project.Pages.UserPages.PublisherPages.ModalWindows.EditProductGenresModalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:team_project.Pages.UserPages.PublisherPages.ModalWindows"
+        mc:Ignorable="d"
+        Title="Редактирование жанров товара" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <ListBox MaxHeight="300" Name="ListBox_Products" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=100}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding GenreName}" FontSize="15" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Margin="5"  Name="Button_Create" Content="Подтвердить выбор" Style="{StaticResource ButtonAccept}" Click="Button_Create_Click"></Button>
+            <Button Margin="5" Name="Button_Cancel" Content="Отмена" Style="{StaticResource ButtonCancel}" Click="Button_Cancel_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

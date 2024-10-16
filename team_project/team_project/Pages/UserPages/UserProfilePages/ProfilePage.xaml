@@ -1,0 +1,32 @@
+﻿<Page x:Class="team_project.Pages.UserPages.UserProfilePages.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:team_project.Pages.UserPages.UserProfilePages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Профиль" Loaded="Page_Loaded">
+
+    <Grid Background="{StaticResource PrimaryBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="2" >
+            <Button Name="Button_Settings" Content="Настройки профиля" FontSize="15" Padding="10" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_Settings_Click"></Button>
+            <Button Name="Button_History" Content="История покупок" FontSize="15" Padding="10" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="Button_History_Click"></Button>
+        </StackPanel>
+
+        <Frame Name="ProfileFrame" Grid.Column="1" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3"></Frame>
+
+    </Grid>
+</Page>

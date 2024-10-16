@@ -1,0 +1,159 @@
+﻿<Page x:Class="team_project.Pages.UserPages.OverlayPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:team_project.Pages.UserPages" xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OverlayPage" Loaded="Page_Loaded" Background="{StaticResource OverlayBackground}">
+
+    <StackPanel Margin="5,10,10,10" VerticalAlignment="Center">
+        <Button  Name="Button_Library" Style="{StaticResource ButtonInOverlay}" Click="Button_Library_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/library.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Библиотека"></Label>
+                </Grid>
+            </Button.Content>
+
+        </Button>
+
+
+        <Button Visibility="Collapsed" Name="Button_Friends" Style="{StaticResource ButtonInOverlay}" Click="Button_Friends_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/friends.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Друзья"></Label>
+                </Grid>
+            </Button.Content>
+
+        </Button>
+
+        <Button Visibility="Collapsed" Name="Button_SupportService" Style="{StaticResource ButtonInOverlay}" Click="Button_SupportService_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/support.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Служба поддержки"></Label>
+                </Grid>
+            </Button.Content>
+
+        </Button>
+
+        <Button Name="Button_Publisher" Visibility="Collapsed" Style="{StaticResource ButtonInOverlay}" Click="Button_Publisher_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/store.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Страница издателя"></Label>
+                </Grid>
+            </Button.Content>
+
+        </Button>
+
+        <Button Name="Button_Moderator" Visibility="Collapsed" Style="{StaticResource ButtonInOverlay}" Click="Button_Moderator_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/store.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Страница менеджера"></Label>
+                </Grid>
+            </Button.Content>
+
+        </Button>
+
+        <Button Name="Button_Store" Style="{StaticResource ButtonInOverlay}" Click="Button_Store_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/store.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Магазин"></Label>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+        <Button Name="Button_Administrator" Visibility="Collapsed" Style="{StaticResource ButtonInOverlay}" Click="Button_Administrator_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/friends.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Страница администратора"></Label>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+        <Button Visibility="Collapsed" Name="Button_Options" Style="{StaticResource ButtonInOverlay}">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/options.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Настройки"></Label>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+        <Button Name="Button_Downloads" Style="{StaticResource ButtonInOverlay}" Click="Button_Downloads_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/downloads.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Загрузки"></Label>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+        <Button Name="Button_Exit" Style="{StaticResource ButtonInOverlay}" Click="Button_Exit_Click">
+            <Button.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <svgc:SvgViewbox Width="30" Margin="10" Height="30" Source="/images/exit.svg"/>
+                    <Label Grid.Column="1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Выход"></Label>
+                </Grid>
+            </Button.Content>
+        </Button>
+    </StackPanel>
+</Page>
+    

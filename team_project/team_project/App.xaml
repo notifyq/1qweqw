@@ -1,0 +1,202 @@
+﻿<Application x:Class="team_project.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:team_project"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc"
+             StartupUri="Windows/LoginWindow.xaml"
+             ShutdownMode="OnLastWindowClose">
+
+    
+    <Application.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#F5F5F5"/>
+        <SolidColorBrush x:Key="SecondaryBackgroundColor" Color="#E8E8E8"/>
+        <SolidColorBrush x:Key="ButtonColor" Color="#D6D6D6"/>
+        <Color x:Key="Primary">#F5F5F5</Color>
+        <Color x:Key="Secondary">#E8E8E8</Color>
+
+
+
+        <Style x:Key="ConfirmButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightGreen"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <Style x:Key="CancelButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="LightCoral"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style x:Key="ContextMenuStyle" TargetType="MenuItem">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <Style x:Key="PopupContentStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource SecondaryBackgroundColor}"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="GenreListBoxStyle" TargetType="ListBox">
+            <Setter Property="Background" Value="{StaticResource PrimaryBackgroundColor}"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+
+        <Style x:Key="GenreCheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <Color x:Key="DarkBlue_1">#0F161D</Color>
+        <Color x:Key="Dark_1">#152026</Color>
+        <Color x:Key="DarkBlue_2">#152026</Color>
+
+
+        
+       
+
+        <SolidColorBrush x:Key="ShopPageColor" Color="#D3D3D3"/>
+        
+        <SolidColorBrush x:Key="LoginBackground" Color="#F5F5F5"/>
+        <SolidColorBrush x:Key="WindowBackground" Color="#F5F5F5"/>
+        <SolidColorBrush x:Key="OverlayBackground" Color="#E8E8E8"/>
+        <SolidColorBrush x:Key="ButtonMouseEnter" Color="#ADD8E6"/>
+        <!-- Светло-голубой -->
+        <SolidColorBrush x:Key="ButtonMouseLeave" Color="#F0F8FF"/>
+        <!-- Алисовый синий -->
+        <SolidColorBrush x:Key="ButtonOverlayMouseEnter" Color="#90EE90"/>
+        <!-- Светло-зеленый -->
+        <SolidColorBrush x:Key="ButtonOverlayMouseLeave" Color="#F5FFFA"/>
+        <!-- Белоснежный -->
+        <BitmapImage x:Key="DefaultImage" UriSource="images/default.png"></BitmapImage>
+
+
+        <Style TargetType="Button" x:Key="ButtonInOverlay">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBackgound" Background="{StaticResource ButtonOverlayMouseLeave}" CornerRadius="4" BorderBrush="Black" BorderThickness="0.5" MouseEnter="ButtonBackgound_MouseEnter" MouseLeave="ButtonBackgound_MouseLeave">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              />
+                            
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="MinHeight" Value="50"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            <Setter Property="MaxHeight" Value="90"></Setter>
+            <Setter Property="MaxWidth" Value="500"></Setter>
+            <Setter Property="MinWidth" Value="300"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="Margin" Value="2,5,2,5"></Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonMenu">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBackgound" CornerRadius="4" Background="{StaticResource ButtonMouseLeave}" MouseEnter="ButtonMouseEnter" MouseLeave="ButtonMouseLeave">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      />
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="MinHeight" Value="50"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            <Setter Property="MaxHeight" Value="90"></Setter>
+            <Setter Property="MaxWidth" Value="500"></Setter>
+            <Setter Property="MinWidth" Value="100"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="Margin" Value="2,5,2,5"></Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonAccept">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBackgound" CornerRadius="8" Background="#3AAC12" MouseEnter="ButtonMouseSendEnter" MouseLeave="ButtonMouseSendLeave">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Width" Value="200"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="Margin" Value="0,0,0,10"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonAdd">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Padding="10" x:Name="ButtonBackgound" CornerRadius="8" Background="#3AAC12" MouseEnter="ButtonMouseSendEnter" MouseLeave="ButtonMouseSendLeave">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="Margin" Value="0,0,0,10"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonCancel">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBackgound" CornerRadius="10" Background="#585858" MouseEnter="ButtonMouseCancelEnter" MouseLeave="ButtonMouseCancelLeave">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Width" Value="200"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="Margin" Value="0,0,0,10"></Setter>
+            <Setter Property="Padding" Value="5,15,5,15"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style TargetType="ListView" x:Key="ListViewAllProgramsShop">
+            <EventSetter Event="PreviewMouseWheel" Handler="ListView_PreviewMouseWheel" />
+        </Style>
+
+    </Application.Resources>
+</Application>

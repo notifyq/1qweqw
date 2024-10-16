@@ -1,0 +1,66 @@
+﻿<Window x:Class="team_project.Pages.UserPages.PublisherPages.ModalWindows.AddProductModalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:team_project.Pages.UserPages.PublisherPages.ModalWindows"
+        mc:Ignorable="d"
+        Title="Добавление товара" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="Grid_NewProductInfo">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Наименование:"/>
+                <TextBox Name="TextBox_Name"/>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Описание:"/>
+                <TextBox Name="TextBox_Description" MinHeight="100"/>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <Label  Content="Цена:"/>
+                <TextBox Name="TextBox_Price"/>
+            </StackPanel>
+
+            <Label Content="Жанры:" Margin="5"/>
+            <ListBox MaxHeight="300" Margin="5" Name="ListBox_Products" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=100}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding GenreName}" FontSize="15" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Right" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Name="Button_Submit" Margin="5" Style="{StaticResource ButtonAccept}" Content="Добавить" Click="Button_Submit_Click"></Button>
+            <Button Name="Button_Cancel" Margin="5" Style="{StaticResource ButtonCancel}" Content="Отмена" Click="Button_Cancel_Click"></Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>

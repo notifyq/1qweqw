@@ -1,0 +1,99 @@
+﻿<Page x:Class="team_project.Pages.StorePages.ProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:team_project.Pages.StorePages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="800"
+      Title="Страница товара">
+
+    <Grid Name="Grid_Product">
+        <Grid.Background>
+            <ImageBrush Opacity="0.4" x:Name="Grid_Product_BackGroundImage" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Image Grid.Column="0" Grid.ColumnSpan="2" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Hidden" Margin="10,0,10,0">
+                <StackPanel>
+                    <StackPanel.Background >
+                        <SolidColorBrush Opacity="0.8" Color="{StaticResource Secondary}"></SolidColorBrush>
+                    </StackPanel.Background>
+                    <Image Margin="25,25,25,5" Stretch="Uniform" Height="512" Width="1024"  Grid.Column="1" Name="Image_productImage" Loaded="Image_productImage_Loaded" HorizontalAlignment="Center">
+                    </Image>
+                    <StackPanel x:Name="ProductInfo" Margin="10,5,10,10">
+                        <TextBlock Text="{Binding ProductName}"  Margin="0,5,0,5" FontSize="30"></TextBlock>
+                        <TextBlock Text="{Binding StringFormat=Издатель: {0},Path=ProductPublisher.PublisherName}" Margin="0,5,0,5" FontSize="15"></TextBlock>
+                        <TextBlock Text="{Binding StringFormat=Разработчик: {0},Path=ProductDeveloper.DeveloperName}" Margin="0,5,0,5" FontSize="15"></TextBlock>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding StringFormat=Жанры: {0}, Path = Genres}" Margin="10"></TextBlock>
+
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="300" Width="1.5*"></ColumnDefinition>
+                            <ColumnDefinition MinWidth="100" Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" Margin="10">
+                            <Grid Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+
+                                <Grid VerticalAlignment="Center" Grid.ColumnSpan="4">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Padding="10" Name="Image_Back" Content="&lt;"  FontSize="40" Background="Transparent" BorderBrush="Transparent" Click="Image_Back_Click"></Button>
+                                    <Image Grid.Column="1" Name="MainImage" Stretch="Uniform" Source="{Binding IMGListView.SelectedItem}" Loaded="MainImage_Loaded"></Image>
+                                    <Button Grid.Column="2" Padding="10" Name="Image_Next" Content=">" FontSize="40" Background="Transparent" BorderBrush="Transparent" Click="Image_Next_Click" ></Button>
+                                </Grid>
+                               
+                                <ListView x:Name="IMGListView" Height="100" Grid.Row="1" Loaded="IMGListView_Loaded" Grid.Column="0" Grid.ColumnSpan="3" d:ItemsSource="{d:SampleData ItemCount=5}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Image Width="100" Height="100"></Image>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal" ScrollViewer.CanContentScroll="False"></StackPanel>
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                </ListView>
+                            </Grid>
+                        </Grid>
+                        <TextBlock Margin="10" Grid.Column="1" Text="{Binding StringFormat= Описание: {0}, Path=ProductDescription}" TextWrapping="Wrap" FontSize="20"></TextBlock>
+
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Grid Grid.Column="1" VerticalAlignment="Center" Margin="25" MinHeight="150" Background="{StaticResource SecondaryBackgroundColor}">
+                <StackPanel VerticalAlignment="Center" >
+                    <TextBlock Name="TextBlock_ProductName" Text="{Binding StringFormat=Купить: {0}, Path=ProductName}"  Margin="10,5,10,5"></TextBlock>
+                    <TextBlock Text="{Binding StringFormat=Цена: {0} руб., Path= ProductPrice}" Margin="10,5,10,5"></TextBlock>
+                    <Button Name="Button_AddToCart" Height="40" Margin="0,0,0,0" Style="{StaticResource ButtonAccept}" Content="В корзину" Click="Button_AddToCart_Click"></Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
